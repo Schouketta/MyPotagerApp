@@ -1,0 +1,19 @@
+/** Widget avec les chiffres */
+
+.widget {
+    color: #1a1a1a;
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+}
+
+.widget hr {
+    background-color: #e7e7e7;
+}
+
+.widgetChiffre {
+    color: #ffffff;
+    text-align: center;
+    margin-top: 30px;
+    font-weight: bold;
+}
