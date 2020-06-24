@@ -6,13 +6,10 @@ import {
     NavbarBrand,
     Nav,
     NavItem,
-    NavLink,
-    UncontrolledDropdown,
-    DropdownToggle,
-    DropdownMenu,
-    DropdownItem,
-    NavbarText
+    NavLink
   } from 'reactstrap';
+import "./Navbar.css";
+import logo from '../Images/vegetable.png';
 
 const MyNavbar = (props) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -22,6 +19,7 @@ const MyNavbar = (props) => {
   return (
     <div>
       <Navbar color="light" light expand="md">
+      <img className="logo" src={logo} alt='logo' id="logo" height='60px'></img>
         <NavbarBrand href="/">MyPotagerApp</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>

@@ -12,7 +12,7 @@ class MyWidgetChiffre extends React.Component {
             <div>
                 <Card className= "widgetChiffre border-0" style={{backgroundColor: this.props.couleur }}>
                     <CardBody >
-                        <h2>{this.props.nombre}</h2>
+                        <h3>{this.props.nombre}</h3>
                         <h6>{this.props.intitule}</h6>
                     </CardBody>
                 </Card>
