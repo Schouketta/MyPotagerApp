@@ -3,17 +3,30 @@ import "./MainContent.css";
 import SensorsContainer from './SensorsContainer'
 import LivestreamContainer from './LivestreamContainer';
 import { Container, Row, Col } from 'reactstrap';
+import CardVanne from './CardVanne';
+import CardSlider from './CardSlider';
 
 
 
 class MyMainContent extends React.Component {
     render() {
       return (
-        <div className="mainContent">
-            <Row xs="1" md="2" lg="2">
-                <Col><SensorsContainer></SensorsContainer></Col>
-                <Col><LivestreamContainer></LivestreamContainer></Col>
-            </Row>
+        <div>
+          <div className="mainContent">
+              <Row >
+                  <Col md="6" xs="12"><SensorsContainer></SensorsContainer></Col>
+                  <Col md="6 " xs="12"><LivestreamContainer></LivestreamContainer></Col>
+              </Row>
+          </div>
+          <div className="cardContainer">
+              <Row >
+                  <Col>
+                  <CardSlider></CardSlider>
+                  </Col>
+              </Row>
+          </div>
+        
+         
       </div>
       )
     }
