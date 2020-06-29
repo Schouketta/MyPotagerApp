@@ -37,3 +37,21 @@
 {
     margin-top : 2%;
 }
+
+.rec rec-carousel-wrapper
+{
+    border : none;
+
+}
+
+.rec-dot_active {
+    background-color: red;
+   border: 1px solid white;
+   box-shadow: 0cm;
+  }
+  
+  .rec rec-dot{
+    background-color: red;
+    color: red;
+
+  }

@@ -14,7 +14,7 @@ class LivestreamContainer extends Component {
             <div className="livestreamContainer" >
             <h6>Livestream</h6>
             <ResponsiveContainer>
-                <iframe className="livestream" src="https://www.youtube.com/embed/erLiHQ8BSNM" style={{ width: '90%', height: 305 }}></iframe>
+                <iframe className="livestream" src="https://www.youtube.com/embed/erLiHQ8BSNM" style={{ width: '90%', height: 295 }}></iframe>
             </ResponsiveContainer>
             </div>
         );
