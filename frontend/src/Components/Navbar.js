@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, Component } from 'react';
 import {
     Collapse,
     Navbar,
@@ -11,61 +11,111 @@ import {
   import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import "./Navbar.css";
 import logo from '../Images/vegetable.png';
+import TabsVannes from './TabsVannes';
 
-const MyNavbar = (props) => {
+class MyNavbar extends Component {
 
-    const [isOpen, setIsOpen] = useState(false);
-    const toggle = () => setIsOpen(!isOpen);
+  
+  constructor(props) {
+    super(props);
 
+    this.state = {
+      isOpen: false
+    };
 
-    const {
-      buttonLabel,
-      className
-    } = props;  
-    const [modal, setModal] = useState(false);
-    const toggleModal = () => setModal(!modal);
+    //Navbar toggle
+    this.toggle = this.toggle.bind(this);
+    //Modal
+    this.handleShow = this.handleShow.bind(this);
+    this.handleClose = this.handleClose.bind(this);
+    this.toggleModal1 = this.toggleModal1.bind(this);
+    this.toggleModal2 = this.toggleModal2.bind(this);
+    
+  }
+
+  toggle() {
+    this.setState({
+      isOpen: !this.state.isOpen
+    });
+  }
+
+  /*const [isOpen, setIsOpen] = useState(false);
+  const toggle = () => setIsOpen(!isOpen);*/
+
+  /// Pour Modal
+  toggleModal1() {
+    this.setState({
+        modal1: !this.state.modal1
+    });
+  }
+
+  toggleModal2() {
+    this.setState({
+        modal2: !this.state.modal2
+    });
+  }
+
+  handleClose() {
+    this.setState({ show: false });
+  }
+
+  handleShow() {
+    this.setState({ show: true });
+  }
+
+  showModal() {
+    this.setState({
+        isModalOpen: true
+    });
+  }
+
   
 
-  return (
-    <div>
-      <Navbar color="light" light expand="md">
-      <img className="logo" src={logo} alt='logo' id="logo" height='60px'></img>
-        <NavbarBrand href="/">MyPotagerApp</NavbarBrand>
-        <NavbarToggler onClick={toggle} />
-        <Collapse isOpen={isOpen} navbar>
-          <Nav className="ml-auto" navbar>
-            
-            <NavItem><NavLink onClick={toggleModal}>Vannes</NavLink></NavItem>
-            <Modal isOpen={modal} toggle={toggleModal} className={className}>
-            <ModalHeader toggle={toggleModal}>Gestion des vannes</ModalHeader>
-              <ModalBody>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-              </ModalBody>
-            <ModalFooter>
-              <Button color="primary" onClick={toggleModal}>Do Something</Button>{' '}
-              <Button color="secondary" onClick={toggleModal}>Cancel</Button>
-            </ModalFooter>
-            </Modal>
+  /* 
+  const [modal, setModal] = useState(false);
+  const toggleModal = () => setModal(!modal);
+  */
+  
+  render() {
+    return (
+      <div>
+        <Navbar color="light" light expand="md">
+        <img className="logo" src={logo} alt='logo' id="logo" height='60px'></img>
+          <NavbarBrand href="/">MyPotagerApp</NavbarBrand>
+          <NavbarToggler onClick={this.toggle} />
+          <Collapse isOpen={this.state.isOpen} navbar>
+            <Nav className="ml-auto" navbar>
+              
+              <NavItem><NavLink onClick={this.toggleModal1}>Gestion des Vannes</NavLink></NavItem>
+              <Modal size="lg" isOpen={this.state.modal1} show={this.state.show} onHide={this.handleClose} toggle={this.toggleModal1}>   
+                <ModalHeader toggle={this.toggleModal1}>Gestion des vannes</ModalHeader>
+                <ModalBody>
+                    <TabsVannes></TabsVannes>
+                </ModalBody>
+                <ModalFooter>
+                  <Button color="secondary" onClick={this.toggleModal1}>Fermer</Button>
+                </ModalFooter>
+              </Modal>
 
-            <NavItem><NavLink onClick={toggleModal}>Gestion des programmes</NavLink></NavItem>
-            <Modal isOpen={modal} toggle={toggleModal} className={className}>
-            <ModalHeader toggle={toggleModal}>Modal title</ModalHeader>
-              <ModalBody>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-              </ModalBody>
-            <ModalFooter>
-              <Button color="primary" onClick={toggleModal}>Do Something</Button>{' '}
-              <Button color="secondary" onClick={toggleModal}>Cancel</Button>
-            </ModalFooter>
-            </Modal>
-           
-          </Nav>
-         
-        </Collapse>
-      </Navbar>
-      
-    </div>
-  );
+              <NavItem><NavLink onClick={this.toggleModal2}>Gestion des programmes</NavLink></NavItem>
+                <Modal size="lg"isOpen={this.state.modal2} show={this.state.show} onHide={this.handleClose} toggle={this.toggleModal2}>   
+                <ModalHeader toggle={this.toggleModal2}>Gestion des programmes</ModalHeader>
+                <ModalBody>
+                    Hello
+                </ModalBody>
+                <ModalFooter>
+                  <Button color="secondary" onClick={this.toggleModal2}>Fermer</Button>
+                </ModalFooter>
+              </Modal>
+            
+            </Nav>
+          
+          </Collapse>
+        </Navbar>
+        
+      </div>
+    );
+  }
 }
 
 export default MyNavbar;

@@ -5,6 +5,7 @@ import LivestreamContainer from './LivestreamContainer';
 import { Container, Row, Col } from 'reactstrap';
 import CardVanne from './CardVanne';
 import CardSlider from './CardSlider';
+import TabsVannes from './TabsVannes';
 
 
 
@@ -24,8 +25,7 @@ class MyMainContent extends React.Component {
                   <CardSlider></CardSlider>
                   </Col>
               </Row>
-          </div>
-        
+          </div>        
          
       </div>
       )

@@ -3,8 +3,21 @@
     margin-right: 1%;
 }
 
-.modal {
-    padding-right: 0px !important;
-    overflow: auto !important;
+.formAddVanne
+{
+    margin-top: 3%;
+    margin-left: 15%;
+    margin-right: 15%;
 }
 
+.modifVanne
+{
+    margin-top: 3%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.instructionsForm
+{
+    text-align: center;
+}
