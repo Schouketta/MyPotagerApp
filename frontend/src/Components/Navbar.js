@@ -12,6 +12,7 @@ import {
 import "./Navbar.css";
 import logo from '../Images/vegetable.png';
 import TabsVannes from './TabsVannes';
+import TabsProgrammes from './TabsProgrammes';
 
 class MyNavbar extends Component {
 
@@ -98,10 +99,10 @@ class MyNavbar extends Component {
               </Modal>
 
               <NavItem><NavLink onClick={this.toggleModal2}>Gestion des programmes</NavLink></NavItem>
-                <Modal size="lg"isOpen={this.state.modal2} show={this.state.show} onHide={this.handleClose} toggle={this.toggleModal2}>   
+                <Modal size="xl"isOpen={this.state.modal2} show={this.state.show} onHide={this.handleClose} toggle={this.toggleModal2}>   
                 <ModalHeader toggle={this.toggleModal2}>Gestion des programmes</ModalHeader>
                 <ModalBody>
-                    Hello
+                    <TabsProgrammes></TabsProgrammes>
                 </ModalBody>
                 <ModalFooter>
                   <Button color="secondary" onClick={this.toggleModal2}>Fermer</Button>

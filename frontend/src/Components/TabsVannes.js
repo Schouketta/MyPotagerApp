@@ -8,22 +8,22 @@ import DataTableSupprimer from './DataTableSupprimer';
 
 
 
-class TabsVannes extends Component {
+class TabsVannes extends Component 
+{
   //const [activeTab, setActiveTab] = useState('1');
-  constructor(props) {
+  constructor(props) 
+  {
     super(props);
 
     this.toggle = this.toggle.bind(this);
 
-
     this.state = {
       activeTab : '1',
-      //setActiveTab : '1',
       tableauVannes : [
-        {id:1, nomVanne:'Vanne Tomates', adresseIP:'198.178.22', type:'fruits'},
-        {id:2, nomVanne:'Vanne Framboises/Mures', adresseIP:'198.178.21', type:'légumes' },
+        {id:1, nomVanne:'Vanne Tomates',            adresseIP:'198.178.22', type:'fruits'},
+        {id:2, nomVanne:'Vanne Framboises/Mures',   adresseIP:'198.178.21', type:'légumes' },
         {id:3, nomVanne:'Vanne Herbes Aromatiques', adresseIP:'197.178.23', type:'herbes aromatiques'},
-        {id:4, nomVanne:'Vanne Radis', adresseIP:'198.178.26', type:'légumes'}
+        {id:4, nomVanne:'Vanne Radis',              adresseIP:'198.178.26', type:'légumes'}
       ],
     };
 
@@ -90,7 +90,7 @@ class TabsVannes extends Component {
 
       </Nav>
 
-      <TabContent activeTab={this.state.activeTab}>
+      <TabContent activeTab={this.state.activeTab} >
         
         <TabPane tabId="1">
           <Row>
@@ -133,9 +133,9 @@ class TabsVannes extends Component {
             <Table striped>
                     <thead>
                       <tr>
-                        <th>id</th>
-                        <th>Nom Vanne</th>
-                        <th>Adresse IP</th>
+                        <th>id             </th>
+                        <th>Nom Vanne      </th>
+                        <th>Adresse IP     </th>
                         <th>Type plantation</th>
                       </tr>
                     </thead>
@@ -154,7 +154,7 @@ class TabsVannes extends Component {
             <Table striped>
                     <thead>
                       <tr>
-                        <th>id</th>
+                        <th>id       </th>
                         <th>Nom Vanne</th>
                       </tr>
                     </thead>
